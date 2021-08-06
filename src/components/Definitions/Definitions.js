@@ -13,23 +13,25 @@ import "./Definitions.css";
 
 const Definitions = ({ word, category, meanings }) => {
   const darkTheme = createTheme({
+    typography: {
+      fontFamily: ["Montserrat, sans-serif"],
+    },
     palette: {
       primary: {
         main: "#fff",
       },
       type: "dark",
     },
-    typography: {
-      fontFamily: ["Montserrat"],
-    },
   });
 
   return (
     <div className="meanings">
       {word === "" ? (
-        <Typography variant="h5">
+        <ThemeProvider theme={darkTheme}>
+        <Typography className="placeholder" variant="h5">
           Type in the box to search for a word
         </Typography>
+        </ThemeProvider>
       ) : (
         meanings.map((mean) =>
           mean.meanings.map((item) =>
