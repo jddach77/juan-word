@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -7,44 +7,42 @@ import Header from "./components/Header/Header";
 import Definitions from "./components/Definitions/Definitions";
 
 function App() {
-
   const [word, setWord] = useState("");
   const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState("en");
 
-  const dictionaryApi = async() => {
+  const dictionaryApi = async () => {
     try {
       const data = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`
       );
-      
-      setMeanings(data.data);
 
+      setMeanings(data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     dictionaryApi();
-  },[word, category])
+  }, [word, category]);
 
   return (
-    <div 
+    <div
       className="App"
-      style={{height: "100vh", backgroundColor: "#282c34", color: "white"}}
+      style={{ height: "100vh", backgroundColor: "#282c34", color: "white" }}
     >
-      <Container 
+      <Container
         maxWidth="md"
-        style={{display: "flex", flexDirection: "column", height: "100vh"}}
+        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
-        <Header 
-          category={category} 
-          setCategory={setCategory} 
-          word={word} 
-          setWord={setWord} 
+        <Header
+          category={category}
+          setCategory={setCategory}
+          word={word}
+          setWord={setWord}
         />
-        {meanings &&(
+        {meanings && (
           <Definitions word={word} meanings={meanings} category={category} />
         )}
       </Container>
