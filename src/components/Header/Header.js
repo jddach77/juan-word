@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Select, MenuItem } from "@material-ui/core";
+import { TextField, MenuItem } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import categories from "../../data/category";
 import "./Header.css";

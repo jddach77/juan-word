@@ -3,8 +3,6 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Divider,
-  Paper,
   Typography,
 } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -26,6 +24,13 @@ const Definitions = ({ word, category, meanings }) => {
 
   return (
     <div className="meanings">
+      {meanings[0] && word && category==="en" && (
+        <audio 
+          src={meanings[0].phonetics[0] && meanings[0].phonetics[0].audio} 
+          style={{ width: "100%" }}
+          controls>
+        </audio>
+      )}
       {word === "" ? (
         <ThemeProvider theme={darkTheme}>
         <Typography className="placeholder" variant="h5">
