@@ -9,16 +9,16 @@ import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./Definitions.css";
 
-const Definitions = ({ word, category, meanings }) => {
+const Definitions = ({ word, category, meanings, LightMode }) => {
   const darkTheme = createTheme({
     typography: {
       fontFamily: ["Montserrat, sans-serif"],
     },
     palette: {
       primary: {
-        main: "#fff",
+        main: LightMode? "#000" : "#fff",
       },
-      type: "dark",
+      type: LightMode ? "light" : "dark",
     },
   });
 
