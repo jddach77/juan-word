@@ -16,7 +16,7 @@ const Definitions = ({ word, category, meanings, LightMode }) => {
     },
     palette: {
       primary: {
-        main: LightMode? "#000" : "#fff",
+        main: LightMode ? "#333" : "#fff",
       },
       type: LightMode ? "light" : "dark",
     },

@@ -48,15 +48,15 @@ function App() {
     <div
       className="App"
       style={{ 
-        height: "100vh", 
-        backgroundColor: LightMode ? "#fff" : "#282c34", 
+        minHeight: "100%", 
+        backgroundColor: LightMode ? "#f5f5f5" : "#282c34", 
         color: LightMode ? "black" : "white",
         transition: "all 0.5s linear" 
       }}
     >
       <Container
         maxWidth="md"
-        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+        style={{ display: "flex", flexDirection: "column", minHeight: "100%" }}
       >
       <div style={{position: "absolute", top: 0, right: 15, paddingTop: 10}}>
         <span>{LightMode ? "Dark" : "Light"} Mode</span>

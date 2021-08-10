@@ -8,9 +8,9 @@ const Header = ({ setCategory, category, setWord, word, LightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: LightMode ? "#000" : "#fff",
+        main: LightMode ? "#333" : "#fff",
       },
-      type: LightMode? "light" : "dark",
+      type: LightMode ? "light" : "dark",
     },
   });
 
