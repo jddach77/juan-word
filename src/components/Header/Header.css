@@ -14,9 +14,6 @@
 }
 
 @media (max-width: 900px){
-	.header {
-		height: 25vh;
-	}
 	.title {
 		font-size: 11vw;
 	}
